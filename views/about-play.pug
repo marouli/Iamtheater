@@ -1,0 +1,55 @@
+doctype html
+html
+    head
+        meta(charset="utf-8")
+        title #{play.title}
+        link(rel="shortcut icon" type="image/x-icon" href="/images/logo-icon.ico")
+        link(href="/css/bootstrap.min.css" rel="stylesheet")
+        link(href="/css/general.css" rel="stylesheet")
+        link(href="/css/about-play.css" rel="stylesheet")
+        link(href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono|Roboto+Slab|Roboto+Slab:400,700" rel="stylesheet")
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
+    body
+        nav(class="navbar navbar-expand-lg navbar-light bg-light fixed-top")
+            a.navbar-brand(href="/")
+                img(src="/images/logo-nav.png" width="110" alt="Logo image")
+            button.navbar-toggler(type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation")
+                span.navbar-toggler-icon
+
+            div(class="collapse navbar-collapse" id="navbarSupportedContent")
+                ul(class="navbar-nav mr-auto")
+                    li(class="nav-item active")
+                        a.nav-link(href="agenda") Agenda
+                    li.nav-item
+                        a.nav-link(href="international") For Internationals
+                    li.nav-item
+                        a.nav-link(href="/") Workshops
+                form(class="form-inline my-2 my-lg-0")
+                    input(class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search")
+                    button(class="btn btn-sm align-middle btn-outline-secondary" type="submit") 
+                        i(class="fa fa-search" style="font-size:15px;")
+        main.container
+            div.row
+                header
+                    a 
+                        h2.play-title #{play.title}
+                //- <img src="https://www.brakkegrond.nl/files/styles/sidebar_image/theater_1718/yinka_kuitenbrouwer_-_bart_grietens-1b.jpg?itok=0nE4H7xp" class="img-fluid image-current" alt="Play's image"
+                article.col-md-12
+                    div(class="row play-information")
+                        div.play-details
+                            p.plot #{play.description}
+                            a.theater(title="Theater's website" href=`${play.theater_url}`) #{play.name} 
+                            p.play-date #{play.play_date}
+
+        footer.footer
+            div.container-fluid
+                ul(class="list-unstyled list-inline text-center")
+                    li.list-inline-item
+                        a(href="") Contact
+                    li.list-inline-item
+                        a(href="") Sign up
+
+        script
+            .src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"
+        script
+            .src="js/bootstrap.min.js"
