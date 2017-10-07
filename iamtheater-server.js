@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const bodyParser = require("body-parser");
 const path = require('path');
 // ES6 destructuring
 // const pg = require("pg");
@@ -14,6 +15,7 @@ const db = new Pool({
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/public'));
 
 
@@ -41,7 +43,6 @@ app.get('/agenda', (req, res) => {
         res.status(500).end("Server error");
     });
 
-
     // db.connect()
     //     .then(client => {
 
@@ -60,46 +61,6 @@ app.get('/agenda', (req, res) => {
     //     })
 });
 
-
-// app.get('/agenda', async (req, res) => {
-
-//   let client = null;
-//   try {
-//     client = await db.connect();
-
-//     // without ES6 destructuring:
-//     const playResult = await client.query("SELECT * FROM play");
-//     const playInfo = playResult.rows;
-
-//     // with ES6 destructuring:
-//     // const { rows: [ playInfo ] } = await client.query("SELECT * FROM play");
-//     if (!playInfo) {
-//       res.status(404).end("Play not found!");
-//       return;
-//     }
-
-//     const theaterResult = await client.query("SELECT * FROM theater");
-//     const theaterInfo = theaterResult.rows;
-//     if (!theaterInfo) {
-//       res.status(404).end("Theater not found!");
-//       return;
-//     }
-
-//     res.render('agenda', {
-//       plays: playInfo,
-//       theaters: theaterInfo
-//     });
-
-//   } catch (error) {
-//     console.error("Error while querying", error.stack);
-//     res.status(500).end("Server error");
-
-//   } finally {
-//     if (client)
-//       client.release();
-//   }
-// });
-
 app.get('/international', (req, res) => {
     db.query(`
         SELECT play.play_id, play.title, play.language, theater.name, theater.theater_url, showtime.play_date
@@ -115,6 +76,32 @@ app.get('/international', (req, res) => {
         res.render("agenda", {
             information: result.rows
         });
+    })
+    .catch(error => {
+        console.log("Error while quering", error.stack);
+        res.status(500).end("Server error");
+    });
+});
+
+app.get('/play/:playTitle', (req, res) => {
+    db.query(`
+        SELECT play.*, theater.*, showtime.*
+        FROM showtime 
+            INNER JOIN play
+                ON showtime.play_id = play.play_id 
+            INNER JOIN theater
+                ON showtime.theater_id = theater.theater_id
+                WHERE play.title = $1`, [req.params.playTitle])
+    .then(result => {
+        const playData = result.rows[0];
+        if(!playData) {
+            res.redirect('/agenda');
+        } else {          
+            res.render("about-play", {
+                play: playData
+            });            
+        }
+
     })
     .catch(error => {
         console.log("Error while quering", error.stack);

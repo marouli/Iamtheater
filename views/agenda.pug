@@ -38,7 +38,7 @@ html
                     each info in information
                         div(class="row play-information")
                             h4.play-title
-                                a(title="About the play" href=`/play/${info.play_id}`) #{info.title} 
+                                a(title="About the play" href=`/play/${info.title}`) #{info.title} 
                             div.play-details
                                 a.theater(title="Theater's website" href=`${info.theater_url}`) #{info.name} 
                                 p.play-date #{info.play_date}

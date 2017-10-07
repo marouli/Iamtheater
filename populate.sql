@@ -1,7 +1,7 @@
 INSERT INTO play
   ( play_id, title, director, description, language, play_url)
 VALUES
-  (1, 'Is This Porn? No This Is Love ', 
+  (1, 'Is This Porn, No This Is Love', 
     'Julie Cafmeyer', 
     'Julie Cafmeyer is ''één van de gewiekste regisseurs van haar generatie'' volgens het Vlaamse magazine Knack. In deze double bill vertelt ze onbeschaamd over haar wanhopige zoektocht naar liefde, bevestiging en zingeving. 
     Theater gaat doorgaans over de grote betekenissen van het bestaan. Julie Cafmeyer laat zien hoe persoonlijke verhalen van grote betekenis kunnen zijn. Na haar vorige spraakmakende voorstelling ''Therapie'', voert ze haar publiek ook deze maal mee naar de intimiteit van haar hoogstpersoonlijke ervaringen. In deze altruïstische theatertrip gaat ze onverschrokken op exploratie naar wat hartenpijn, waar we allen zo hebben mee te maken, betekent. Bombastische liefdesverklaring is een uit haar intieme leven gegrepen biografische, documentaire verklaring. Jullie vraagt aandacht! Ontroerend serveert ze haar twijfels, pijn, wanhoop en verlangen. Zonder gêne neemt ze haar publiek mee in een theatermoment waar iedereen betrokken partij kan zijn, radicaal, principieel, zonder franjes.  
