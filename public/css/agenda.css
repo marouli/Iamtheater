@@ -1,0 +1,109 @@
+main.container {
+    margin-top: 5em;
+    margin-bottom: 0;
+}
+
+nav a img {
+    margin-top: 0.3em;
+    margin-bottom: 0.3em;
+    margin-right: 1.5em;
+    margin-left: 2em;
+}
+
+nav ul li {
+    font-family: 'Roboto Slab', serif;
+    font-size: large;
+    font-style: bold;
+    margin-top: 1.5em;
+    margin-right: 1em;
+}
+
+nav ul li:hover {
+    border-bottom: medium solid black;
+}
+
+.btn-outline-secondary {
+    color: #fff;
+    background-color: black;
+}
+
+.btn-outline-secondary:hover {
+    color: black;
+    background-color: #EFFBEF;
+}
+
+.bg-light {
+    background-color: #D1DCD6 !important;
+}
+
+main header h5.current-date {
+    background-color: black;
+    margin-top: 6em;
+    padding: 0.5em 0.8em 0.5em 0.8em;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2em;
+    color: #8A9891;
+}
+
+main div.play-list {
+    margin-bottom: 10em;
+}
+
+main article div.play-information{
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+    border: 5px solid black;
+}
+
+main article h4.play-title {
+    padding: 1em 0.5em 0.5em 2em;
+}
+
+main article h4.play-title a{
+    color: #8A9891;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 700;
+}
+
+main article a:hover {
+    text-decoration: none;
+}
+
+main article div.play-details {
+    margin-top: 0.5em;
+    margin-left: 0.5em;
+}
+
+main article a.theater {
+    color: #8A9891;
+}
+
+main article p.play-date {
+    padding: 0.2em 0.4em 0.2em 0.4em;
+    color: grey;
+    background-color: yellow;
+}
+
+
+@media (max-width: 480px) {
+    .container {
+        margin-top: 8em;
+    }
+}
+
+
+@media (min-width: 1200px) {
+    .footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 140px;
+        padding: 40px;
+        background-color: black;
+    }
+
+    .container h3 {
+        margin-top: 4em;
+    }
+}
+
