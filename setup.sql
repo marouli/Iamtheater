@@ -23,3 +23,8 @@ CREATE TABLE showtime (
     play_time TIME NOT NULL,
     price TEXT 
 );
+
+CREATE TABLE newsletter_users (
+    user_id SERIAL PRIMARY KEY,
+    email TEXT NOT NULL
+);

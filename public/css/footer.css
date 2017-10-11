@@ -1,0 +1,103 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /*Margin bottom by footer height*/
+    margin-bottom: 120px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /*Set the fixed height of the footer here*/
+    height: 120px;
+    padding: 40px;
+    background-color: black;
+}
+
+.footer li {
+    font-family: 'Roboto Slab', serif;
+    color: #D1DCD6;
+}
+
+.footer li a {
+    border: 0.1em solid yellow;
+    margin-left: 0.7em;
+    padding: 0.4em 1em 0.5em 1em;
+    color: yellow;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+}
+
+.footer li a:hover {
+    color: black;
+    background-color: yellow;
+}
+
+.footer li p.signup {
+    margin-left: 3em;
+}
+
+.footer li input{
+    border: 0.1em solid yellow;
+    margin-left: 0.5em;
+    padding: 0.3em 4em 0.3em 1em;
+    color: black;
+    font-family: 'Roboto', sans-serif;
+}
+
+.footer li button {
+    margin-left: 0.3em;
+    padding: 0.2em 0.5em 0.5em 0.3em;
+    border: none;
+    color: black;
+    background-color: yellow;
+}
+
+.footer li button:hover {
+    color: yellow;
+    background-color: black;
+}
+
+@media (max-width: 760px) {
+    body {
+        margin-bottom: 240px;
+    }
+
+    .footer {
+        height:240px;
+        padding: 0;
+    }
+
+    .footer ul {
+        margin-top: 2.5em;
+    }
+
+    .footer li p.signup {
+        margin: 1em 1em 1em 0;
+    }
+
+    .footer li p.signup input, button{
+        margin-top: 0.7em;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    body {
+        margin-bottom: 150px;
+    }
+
+    .footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        /*Set the fixed height of the footer here*/
+        height: 150px;
+        padding: 40px;
+        background-color: black;
+    }
+
+}

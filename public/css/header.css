@@ -1,0 +1,33 @@
+nav a img {
+    margin-top: 0.3em;
+    margin-bottom: 0.3em;
+    margin-right: 1.5em;
+    margin-left: 2em;
+}
+
+nav ul li {
+    font-family: 'Roboto Slab', serif;
+    font-size: large;
+    font-style: bold;
+    margin-top: 1.5em;
+    margin-right: 1em;
+}
+
+nav ul li:hover {
+    border-bottom: medium solid black;
+}
+
+.btn-outline-secondary {
+    margin-right: 2em;
+    color: #fff;
+    background-color: black;
+}
+
+.btn-outline-secondary:hover {
+    color: black;
+    background-color: #EFFBEF;
+}
+
+.bg-light {
+    background-color: #D1DCD6 !important;
+}
