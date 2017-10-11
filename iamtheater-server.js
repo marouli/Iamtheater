@@ -143,35 +143,18 @@ app.get('/play/:playTitle', (req, res) => {
     });
 });
 
-app.post('/signUp', function(req, res) { 
-    let newUser = req.body.email;
-    // db.query(`
-    //     SELECT play.*, theater.*, showtime.*
-    //     FROM showtime 
-    //         INNER JOIN play
-    //             ON showtime.play_id = play.play_id 
-    //         INNER JOIN theater
-    //             ON showtime.theater_id = theater.theater_id
-    //             WHERE play.title = $1`, [newUser])
-    // .then(result => {
-    //     const playData = result.rows[0];
-    //     if(!playData) {
-    //         res.redirect('/agenda');
-    //     } else {          
-    //         res.render("about-play", {
-    //             play: playData
-    //         });            
-    //     }
-
-    // })
-    // .catch(error => {
-    //     console.log("Error while quering", error.stack);
-    //     res.status(500).end("Server error");
-    // });
-    // console.log(res)
-    console.log(newUser)
-    res.setHeader('Content-Type', 'application/json');
-    res.json({ result: 'success' }).end();
+app.post('/signUp', (req, res) => { 
+    db.query("INSERT INTO newsletter_users ( email ) VALUES ( $1 )", [ req.body.email ])
+    .then(result => {
+        res.setHeader('Content-Type', 'application/json');
+        console.log(req.body.email + ' success');
+        res.json({ result: 'success' }).end();
+    })
+    .catch(error => {
+        res.setHeader('Content-Type', 'application/json');
+        console.log(req.body.email + ' failure');
+        res.json({ result: 'failure' }).end();
+    })
 });
 
 app.get('*', (req, res) => {

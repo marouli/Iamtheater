@@ -1,54 +1,63 @@
 main.container {
-    margin-top: 5em;
-    margin-bottom: 2em;
+    margin-top: 13em;
+    margin-bottom: 13em;
 }
 
 main header h5.current-date {
     background-color: black;
-    margin-top: 6em;
-    padding: 0.5em 0.8em 0.5em 0.8em;
+    padding: 0.3em 0.8em 0.5em 0.8em;
     font-family: 'Roboto', sans-serif;
     font-size: 1.2em;
     color: #8A9891;
 }
 
-main div.play-list {
-    margin-bottom: 10em;
-}
-
 main article div.play-information{
-    margin-top: 0.5em;
-    margin-bottom: 1em;
+    margin-top: 1.2em;
     border: 5px solid black;
 }
 
 main article h4.play-title {
-    padding: 1em 0.5em 0.5em 2em;
+    padding: 0.7em 0.5em 0.5em 2em;
+    margin-right: 0.5em;
 }
 
-main article h4.play-title a{
+main article h4.play-title a {
     color: #8A9891;
     font-family: 'Roboto Slab', serif;
+    font-size: 1.2em;
     font-weight: 700;
 }
 
-main article a:hover {
+main article h4.play-title a:hover {
     text-decoration: none;
+    color: black;
 }
 
-main article div.play-details {
-    margin-top: 0.5em;
-    margin-left: 0.5em;
+main article div.theater {
+    margin-top: 1.3em;
 }
 
 main article a.theater {
-    color: #8A9891;
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+main article div.date {
+
+    /*margin-top: 1em;*/
 }
 
 main article p.play-date {
-    padding: 0.2em 0.4em 0.2em 0.4em;
+    float: auto;
+    margin-right: 3em;
+    padding: 0.5em 1em 0.5em 1em;
     color: grey;
     background-color: yellow;
+    font-family: 'Roboto Slab', serif;
+    font-size: 1.2em;
+    font-weight: 700;
 }
 
 

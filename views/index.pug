@@ -9,6 +9,7 @@
     <link href="css/index.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono|Roboto+Slab:400,700" rel="stylesheet">
     link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
+    script(src="/js/showMessage.js")
 </head>
 <body>
     <header>
@@ -29,9 +30,15 @@
                 <p>See all shows in english or other languages.</p></a>
             </div>
             <div class="col-md-4">
-                <a href="/"><h3>Workshops</h3>
+                <a onclick="showMessage('under-construction', 'alert-info', '<strong>Info</strong> This part is still under construction', 2000)"><h3>Workshops</h3>
                 <p>Checkout theater workshops in english.</p></a>
             </div>
+        </div>
+        <div class="alert alert-dismissible fade" role="alert" id="under-construction">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <span></span>
         </div>
     </main>
     include ./footer.pug

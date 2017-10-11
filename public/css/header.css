@@ -17,6 +17,13 @@ nav ul li:hover {
     border-bottom: medium solid black;
 }
 
+nav input {
+    border: 0.1em solid yellow;
+    padding: 0.2em 0 0.2em 1em;
+    color: black;
+    font-family: 'Roboto', sans-serif;
+}
+
 .btn-outline-secondary {
     margin-right: 2em;
     color: #fff;

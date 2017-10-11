@@ -2,46 +2,8 @@ doctype html
 html
     head
         title Agenda | I amtheater
-        link(href="/css/agenda.css" rel="stylesheet")
         include ./head.pug
-        script.
-            function redirectToDate(){
-                let date = document.getElementById("date").value
-                if (date) {
-                    window.location.replace('/byDate/'+ date)
-                    }
-                }
-        script.
-            function submitEmail() {
-                let email = document.getElementById("email").value;
-                console.log(email)
-                if (email) {
-                    fetch("/signUp",
-                        {
-                            method: "POST",
-                            headers: {
-                                'Accept': 'application/json, text/plain, */*',
-                                'Content-Type': 'application/json'
-                              },
-                            body: JSON.stringify({email: document.getElementById("email").value})
-                        }).then(function(response){ 
-                                //- function(){
-                                //-     console.log('Showing slide message')
-                                //-     const msg = "Email successfully recorded for newsletter"
-                                //-     const time = 1000;
-                                //-     document.getElementById('flash-container')[0].innerHTML = "<div class='success message'>" + msg + "</div>";
-                                //-     document.getElementById('flash-container').addClass('showing');
-                                //-     setTimeout(function(){
-                                //-       document.getElementById('flash-container').removeClass('showing');
-                                //-     }, time);
-                                //-   };
-                                console.log('Posted successfully')
-                                return response.json();
-                            }).then(function(data) {
-                                console.log(data);
-                              });
-                    };
-                };
+        link(href="/css/agenda.css" rel="stylesheet")
     body
         include ./header.pug
         main.container
@@ -57,11 +19,12 @@ html
                     each info in information
                         div(class="row play-information")
                             h4.play-title
-                                a(title="About the play" href=`/play/${info.title}`) #{info.title} 
-                            div.play-details
+                                a(title="About the play" href=`/play/${info.title}`) #{info.title} |
+                            div.theater
                                 a.theater(title="Theater's website" href=`${info.theater_url}`) #{info.name} 
+                            div.date
                                 p.play-date #{info.play_date.toDateString()}
                     else
                         .info Sorry, no plays for now!
-
+            include ./email-alert.pug
         include ./footer.pug
