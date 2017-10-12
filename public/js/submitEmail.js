@@ -12,9 +12,11 @@ function submitEmail() {
             }).then(function(response){ 
                     return response.json();
                 }).then(function(data) {
-                    showMessage("newsletter-submitted", "alert-success", "<strong>Success!</strong> Email submitted successfully.", 2000)
+                    showMessage("newsletter-submitted", "alert-success", "<strong>Success!</strong> Email submitted successfully.", 2000);
+                    document.getElementById("email").value = "";
                 }).catch(error => {
-                    showMessage("newsletter-submitted", "alert-danger", "<strong>Failure!</strong> Email not submitted!", 2000)
+                    showMessage("newsletter-submitted", "alert-danger", "<strong>Failure!</strong> Email not submitted!", 2000);
+                    document.getElementById("email").value = "";
                 });
             };
     };            

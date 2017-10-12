@@ -52,12 +52,15 @@ main article a.theater:hover {
 }
 
 main article div.play-date {
-    background-color: yellow;
+    
 }
 
 main article div.play-date p {
-    padding-top: 1.2em;
-    padding-left: 1em;
+    background-color: yellow;
+    margin-right: 0.5em;
+    padding-top: 1em;
+    padding-left: 1.1em;
+    padding-bottom: 1em;
     color: black;
     font-family: 'Roboto Slab', serif;
     font-size: 1.2em;
