@@ -5,6 +5,7 @@ main.container {
 
 main header h5.current-date {
     background-color: black;
+    margin-left: 0.8em;
     padding: 0.3em 0.8em 0.5em 0.8em;
     font-family: 'Roboto', sans-serif;
     font-size: 1.2em;
@@ -12,19 +13,19 @@ main header h5.current-date {
 }
 
 main article div.play-information{
-    margin-top: 1.2em;
+    margin-top: 1.3em;
     border: 5px solid black;
 }
 
 main article h4.play-title {
-    padding: 0.7em 0.5em 0.5em 2em;
-    margin-right: 0.5em;
+    margin: 1em 0.7em 1em 0.5em;
+    border-right: 3px solid #8A9891;
 }
 
 main article h4.play-title a {
     color: #8A9891;
     font-family: 'Roboto Slab', serif;
-    font-size: 1.2em;
+    font-size: 1.1em;
     font-weight: 700;
 }
 
@@ -34,30 +35,41 @@ main article h4.play-title a:hover {
 }
 
 main article div.theater {
-    margin-top: 1.3em;
+    padding-top: 1.7em;
 }
 
 main article a.theater {
     color: black;
     font-family: 'Roboto', sans-serif;
     font-size: 1.2em;
-    font-weight: 500;
+    font-weight: 700;
 }
 
-main article div.date {
 
-    /*margin-top: 1em;*/
+main article a.theater:hover {
+    text-decoration: none;
+    border-bottom: 3px solid black;
 }
 
-main article p.play-date {
-    float: auto;
-    margin-right: 3em;
-    padding: 0.5em 1em 0.5em 1em;
-    color: grey;
+main article div.play-date {
     background-color: yellow;
+}
+
+main article div.play-date p {
+    padding-top: 1.2em;
+    padding-left: 1em;
+    color: black;
     font-family: 'Roboto Slab', serif;
     font-size: 1.2em;
     font-weight: 700;
+}
+
+main div.info {
+    font-family: 'Roboto Slab', serif;
+    font-size: 1.2em;
+    font-weight: 700;
+    color: #8A9891;
+    margin-top: 1em;
 }
 
 

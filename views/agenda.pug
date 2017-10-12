@@ -17,14 +17,16 @@ html
                 div.col-md-1
                 article.col-md-10                    
                     each info in information
-                        div(class="row play-information")
-                            h4.play-title
-                                a(title="About the play" href=`/play/${info.title}`) #{info.title} |
-                            div.theater
-                                a.theater(title="Theater's website" href=`${info.theater_url}`) #{info.name} 
-                            div.date
-                                p.play-date #{info.play_date.toDateString()}
+                        div(class="container-fluid play-information")
+                            div.row
+                                div(class="col-6")
+                                    h4.play-title
+                                        a(title="About the play" href=`/play/${info.title}`) #{info.title}
+                                div(class="col-3 theater")
+                                    a.theater(title="Theater's website" href=`${info.theater_url}`) #{info.name}
+                                div(class="col-3 play-date")
+                                    p #{info.play_date.toDateString()}
                     else
-                        .info Sorry, no plays for now!
+                        .info Sorry, no plays for this date!
             include ./email-alert.pug
         include ./footer.pug
