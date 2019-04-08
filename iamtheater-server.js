@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
@@ -12,10 +13,11 @@ const readFileAsync = util.promisify(fs.readFile);
 // const Pool = pg.Pool;
 const { Pool } = require("pg");
 const db = new Pool({
-  host: "localhost",
-  database: "iamtheater",
-  user: "postgres",
-  password: "postgres"
+  host: process.env.DB_HOST,
+  database: process.env.DB_NAME,
+  port: process.env.DB_PORT,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASS
 });
 
 app.set('views', path.join(__dirname, 'views'));
@@ -162,6 +164,9 @@ app.get('*', (req, res) => {
 });
 
 app.listen(8080);
+
+
+
 
 
 

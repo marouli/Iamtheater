@@ -1,0 +1,36 @@
+{
+  "name": "iamtheater",
+  "version": "0.1.0",
+  "description": "Amsterdam theater agenta for internationals",
+  "main": "iamtheater-server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marouli/Iamtheater.git"
+  },
+  "keywords": [
+    "amsterdam",
+    "theater",
+    "internationals",
+    "english",
+    "node"
+  ],
+  "author": "marouli",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/marouli/Iamtheater/issues"
+  },
+  "homepage": "https://github.com/marouli/Iamtheater#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "dateformat": "^3.0.2",
+    "dotenv": "^7.0.0",
+    "express": "^4.16.2",
+    "json": "^9.0.6",
+    "pg": "^7.4.1",
+    "pug": "^2.0.0-rc.4",
+    "request": "^2.83.0"
+  }
+}
